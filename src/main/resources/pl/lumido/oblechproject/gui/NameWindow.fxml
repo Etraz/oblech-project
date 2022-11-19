@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="100.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lumido.oblechproject.gui.NameWindowController">
+   <children>
+      <Label layoutX="75.0" layoutY="14.0" prefHeight="17.0" prefWidth="151.0" text="Please put your name below" />
+      <TextField fx:id="nameField" layoutX="76.0" layoutY="38.0" promptText="Your name" />
+      <Button layoutX="121.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleButtonPressed" text="Confirm" />
+   </children>
+</AnchorPane>

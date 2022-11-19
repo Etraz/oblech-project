@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="100.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lumido.oblechproject.gui.handCreation.TwoPairController">
+    <children>
+        <Label alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="17.0" prefWidth="151.0" text="Pick heights of pairs" textAlignment="CENTER" />
+        <ChoiceBox fx:id="firstPairHeightChoiceBox" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="122.0" />
+        <ChoiceBox fx:id="secondPairHeightChoiceBox" layoutX="165.0" layoutY="38.0" prefHeight="25.0" prefWidth="122.0" />
+        <Button layoutX="121.0" layoutY="67.0" mnemonicParsing="false" onAction="#handleButtonPressed" text="Confirm" />
+    </children>
+</AnchorPane>

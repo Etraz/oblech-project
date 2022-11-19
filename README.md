@@ -4,9 +4,10 @@ Project made for Java course in TCS 22/23 winter semester. Multiplayer card game
 Author Mikołaj Kot.
 
 ## How to compile/start/play
-placeholder (:
+Now only playing on local host is supported and unfortunately project isn't compiled to jar file yet
+So, to play is needed to open project in IDE such as Intellij Idea and run main method in Admin class
 
-## Instructions for playing the game
+## Instructions for playing the game in real live
 Game can be played by 3 to 10 players
 - Game is played with card deck of size 12 + 4 * numberOfPlayers
 - At the start of the turn each player draws cards at the start of the game one
@@ -19,8 +20,8 @@ Game can be played by 3 to 10 players
 
 ### List of possible sets ranked from worst to best
 - One card: Player says number of the card
-- Pair: Player says number of the cards in pair
-- Two Pairs: Player says numbers of the cards in each pair
+- Pair: Player says number of the cards in onePair
+- Two Pairs: Player says numbers of the cards in each onePair
 - Straight: Player says the smallest card from Straight
 - Three of a Kind : Player says number of the cards in Three of a Kind
 - Full House : Player says numbers of the cards in Three of a Kind and in Pair

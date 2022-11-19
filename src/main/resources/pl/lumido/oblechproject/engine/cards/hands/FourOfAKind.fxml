@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="100.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lumido.oblechproject.gui.handCreation.FourOfAKindController">
+    <children>
+        <Label alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="17.0" prefWidth="151.0" text="Pick height of four of a kind" textAlignment="CENTER" />
+        <ChoiceBox fx:id="fourHeightChoiceBox" layoutX="75.0" layoutY="38.0" prefWidth="150.0" />
+        <Button layoutX="121.0" layoutY="67.0" mnemonicParsing="false" onAction="#handleButtonPressed" text="Confirm" />
+    </children>
+</AnchorPane>
