@@ -138,21 +138,21 @@ public class Game {
                     currentPlayers.add(activePlayer);
                 }
             }
-            if (currentHand.isItInReverse(rest)) {
+            if (!currentHand.isItInReverse(rest)) {
                 Player prevPlayer = currentPlayers.removeLast();
                 prevPlayer.setNumberOfCardsWanted(prevPlayer.getNumberOfCardsWanted() + 1);
+                currentPlayers.addFirst(lastPlayer);
                 if (prevPlayer.getNumberOfCardsWanted() == numberOfCardsToGoBust) {
                     prevPlayer.setPlaying(false);
                 } else {
-                    currentPlayers.add(prevPlayer);
+                    currentPlayers.addFirst(prevPlayer);
                 }
-                currentPlayers.add(lastPlayer);
             } else {
                 lastPlayer.setNumberOfCardsWanted(lastPlayer.getNumberOfCardsWanted() + 1);
                 if (lastPlayer.getNumberOfCardsWanted() == numberOfCardsToGoBust) {
                     lastPlayer.setPlaying(false);
                 } else {
-                    currentPlayers.add(lastPlayer);
+                    currentPlayers.addFirst(lastPlayer);
                 }
             }
             try {

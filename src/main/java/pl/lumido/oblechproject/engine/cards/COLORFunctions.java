@@ -5,7 +5,7 @@ import java.util.HashSet;
 public class COLORFunctions {
     public static boolean isSmaller(COLOR first, COLOR second){
         if(first == second){
-            return false;
+            return true;
         }
         if(first == COLOR.SPADES || second == COLOR.CLUBS){
             return false;
