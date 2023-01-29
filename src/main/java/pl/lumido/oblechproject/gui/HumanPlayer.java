@@ -81,6 +81,7 @@ public class HumanPlayer extends Player{
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent windowEvent) {
+                Platform.exit();
                 System.exit(0);
             }
         });
