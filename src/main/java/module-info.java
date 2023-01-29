@@ -12,4 +12,7 @@ module com.example.oblechproject {
     opens pl.lumido.oblechproject.engine.cards.hands to javafx.fxml;
     exports pl.lumido.oblechproject.engine.cards.hands;
 
+    opens pl.lumido.oblechproject.engine to javafx.fxml;
+    exports pl.lumido.oblechproject.engine;
+
 }

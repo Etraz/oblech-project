@@ -1,22 +1,17 @@
 package pl.lumido.oblechproject.engine;
 
 import javafx.application.Platform;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import pl.lumido.oblechproject.engine.cards.CardSet;
 import pl.lumido.oblechproject.engine.cards.Deck;
 import pl.lumido.oblechproject.engine.cards.hands.EmptyHand;
 import pl.lumido.oblechproject.engine.cards.hands.Hand;
 import pl.lumido.oblechproject.gui.Admin;
-import pl.lumido.oblechproject.gui.HandQuestion;
-import pl.lumido.oblechproject.gui.Player;
 import javafx.util.Pair;
+import pl.lumido.oblechproject.gui.Player;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.concurrent.*;
 
 public class Game {
@@ -97,7 +92,6 @@ public class Game {
         return toReturn;
     }
 
-    //TODO restart after end
     public void simulate() {
         Deck deck = new Deck(lowestCard);
         clearPlayersHands();
@@ -111,7 +105,6 @@ public class Game {
             for(Player p : players) p.clearCardSet();
             Pair<ArrayList<Integer>, ArrayList<CardSet>> playersCardsSets = createPlayersCardsSets(currentPlayers);
             CardSet rest = deck.deal(playersCardsSets.getKey(), playersCardsSets.getValue());
-            //TODO 5. ALSO Shows how many cards where dealt how many are in deck and how many to bust
             for (Player p : currentPlayers) {
                 p.dealt();
                 for (Player q : players) {
@@ -132,7 +125,7 @@ public class Game {
                     stillPlay = false;
                 } else {
                     for (Player p : players){
-                        p.addToHistory(activePlayer.getName() + ":    " + newHand.toString());
+                        p.addToHistory(activePlayer.getName() + ":    " + newHand);
                     }
                     currentHand = newHand;
                     currentPlayers.add(activePlayer);
@@ -177,5 +170,6 @@ public class Game {
             admin.show(new Stage());
         });
     }
+
 
 }

@@ -23,4 +23,22 @@ public class COLORFunctions {
         }
         return true;
     }
+
+    public static COLOR next(COLOR color){
+        switch (color){
+            case CLUBS -> {
+                return COLOR.DIAMONDS;
+            }
+            case DIAMONDS -> {
+                return COLOR.HEARTS;
+            }
+            case HEARTS -> {
+                return COLOR.SPADES;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
 }

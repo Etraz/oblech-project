@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pl.lumido.oblechproject.engine.cards.CardSet;
+import pl.lumido.oblechproject.gui.Admin;
 import pl.lumido.oblechproject.gui.handCreation.ThreeOfAKindController;
 
 import java.io.IOException;
@@ -86,5 +87,14 @@ public class ThreeOfAKind implements Hand {
         stage.showAndWait();
     }
 
-
+    public Hand nextHand(){
+        Hand toReturn;
+        if (cardIndex != 14){
+            toReturn = new ThreeOfAKind(cardIndex + 1);
+        }
+        else {
+            toReturn = new FullHouse(Admin.game.getLowestCard(), Admin.game.getLowestCard() + 1);
+        }
+        return toReturn;
+    }
 }

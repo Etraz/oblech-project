@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pl.lumido.oblechproject.engine.cards.CardSet;
+import pl.lumido.oblechproject.gui.Admin;
 import pl.lumido.oblechproject.gui.handCreation.TwoPairController;
 
 import java.io.IOException;
@@ -113,5 +114,19 @@ public class TwoPairs implements Hand {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+    public Hand nextHand(){
+        Hand toReturn;
+        if (secondCardIndex != firstCardIndex - 1){
+            toReturn = new TwoPairs(firstCardIndex, secondCardIndex + 1);
+        }
+        else if (firstCardIndex != 14){
+            toReturn = new TwoPairs(firstCardIndex + 1, Admin.game.getLowestCard());
+        }
+        else {
+            toReturn = new Straight(Admin.game.getLowestCard());
+        }
+        return toReturn;
     }
 }

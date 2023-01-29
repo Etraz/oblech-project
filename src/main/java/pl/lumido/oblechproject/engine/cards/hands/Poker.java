@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import pl.lumido.oblechproject.engine.cards.COLOR;
 import pl.lumido.oblechproject.engine.cards.COLORFunctions;
 import pl.lumido.oblechproject.engine.cards.CardSet;
+import pl.lumido.oblechproject.gui.Admin;
 import pl.lumido.oblechproject.gui.handCreation.PokerController;
 
 import java.io.IOException;
@@ -86,5 +87,19 @@ public class Poker implements Hand {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+    public Hand nextHand(){
+        Hand toReturn;
+        if (COLORFunctions.next(color) != null){
+            toReturn = new Poker(cardIndex, COLORFunctions.next(color));
+        }
+        else if (cardIndex != 10){
+            toReturn = new Poker(cardIndex + 1, COLOR.CLUBS);
+        }
+        else{
+            toReturn = null;
+        }
+        return toReturn;
     }
 }

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import pl.lumido.oblechproject.engine.cards.CardSet;
+import pl.lumido.oblechproject.gui.Admin;
 import pl.lumido.oblechproject.gui.handCreation.OneCardController;
 
 import java.io.IOException;
@@ -87,5 +88,16 @@ public class OneCard implements Hand {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+    public Hand nextHand(){
+        Hand toReturn;
+        if (cardIndex != 14){
+            toReturn = new OneCard(cardIndex + 1);
+        }
+        else {
+            toReturn = new OnePair(Admin.game.getLowestCard());
+        }
+        return toReturn;
     }
 }

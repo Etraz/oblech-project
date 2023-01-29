@@ -19,6 +19,5 @@ public interface Hand {
         return -1;
     }
 
-    //TODO 7. implement this method
-    //Hand nextHand();
+    Hand nextHand();
 }

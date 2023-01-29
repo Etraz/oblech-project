@@ -1,15 +1,13 @@
 package pl.lumido.oblechproject.gui;
 
 import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.EventHandler;
 import pl.lumido.oblechproject.engine.cards.hands.Hand;
 
 public class HandQuestion extends Task<Hand> {
     public Hand hand;
-    Player player;
+    HumanPlayer player;
 
-    public HandQuestion(Hand hand, Player player){
+    public HandQuestion(Hand hand, HumanPlayer player){
         this.hand = hand;
         this.player = player;
     }

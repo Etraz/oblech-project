@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pl.lumido.oblechproject.engine.cards.CardSet;
+import pl.lumido.oblechproject.gui.Admin;
 import pl.lumido.oblechproject.gui.handCreation.FullHouseController;
 
 import java.io.IOException;
@@ -107,5 +108,24 @@ public class FullHouse implements Hand {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+    public Hand nextHand(){
+        Hand toReturn = null;
+        if (secondCardIndex != 14){
+            if(secondCardIndex != firstCardIndex - 1) {
+                toReturn = new FullHouse(firstCardIndex, secondCardIndex + 1);
+            }
+            else if (secondCardIndex != 13){
+                toReturn = new FullHouse(firstCardIndex, secondCardIndex + 2);
+            }
+        }
+        if (toReturn == null && firstCardIndex != 14){
+            toReturn = new FullHouse(firstCardIndex + 1, Admin.game.getLowestCard());
+        }
+        else if (toReturn == null){
+            toReturn = new FourOfAKind(Admin.game.getLowestCard());
+        }
+        return toReturn;
     }
 }

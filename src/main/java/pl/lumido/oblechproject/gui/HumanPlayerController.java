@@ -3,14 +3,13 @@ package pl.lumido.oblechproject.gui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import pl.lumido.oblechproject.engine.cards.hands.*;
 
-public class PlayerController {
-    public Player player;
+public class HumanPlayerController {
+    public HumanPlayer player;
     public Button pokerButton;
     public Button oneCardButton;
     public Button fourOfAKindButton;
@@ -170,6 +169,10 @@ public class PlayerController {
 
     public void check(ActionEvent event){
         synchronized (player) {
+            if (history.getChildren().isEmpty()){
+                new ErrorWindow("You can not check now").show(new Stage());
+                return;
+            }
             player.setNextHand(null);
             player.notifyAll();
         }

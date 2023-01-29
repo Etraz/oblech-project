@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.lumido.oblechproject.engine.cards.COLOR;
 import pl.lumido.oblechproject.engine.cards.CardSet;
+import pl.lumido.oblechproject.gui.Admin;
 import pl.lumido.oblechproject.gui.handCreation.FourOfAKindController;
 
 import java.io.IOException;
@@ -84,5 +86,16 @@ public class FourOfAKind implements Hand {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+    public Hand nextHand(){
+        Hand toReturn;
+        if (cardIndex != 14){
+            toReturn = new FourOfAKind(cardIndex + 1);
+        }
+        else {
+            toReturn = new Poker(Admin.game.getLowestCard(), COLOR.CLUBS);
+        }
+        return toReturn;
     }
 }
