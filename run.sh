@@ -1,3 +1,4 @@
 #!/bin/bash
 
-mvn compile exec:java -Dexec.mainClass=pl.lumido.oblechproject.gui.Admin
+mvn exec:java -D  "exec.mainClass=pl.lumido.oblechproject.gui.Admin"
+pkill java
