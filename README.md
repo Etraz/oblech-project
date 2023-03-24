@@ -4,7 +4,7 @@ Project made for Java course in TCS 22/23 winter semester. Multiplayer card game
 Author Mikołaj Kot.
 
 ## How to compile/start/play
-Project can be compiled using ./build command(latest version of JAVA and maven is needed) and run using ./run command.
+Project can be compiled using ./build command(latest version of JAVA and maven is needed) and run using ./run command.
 ## Instructions for playing the game in real live
 Game can be played by 3 to 10 players
 - Game is played with card deck of size 12 + 4 * numberOfPlayers
